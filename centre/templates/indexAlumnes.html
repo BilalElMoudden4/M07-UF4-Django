@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+
+<body>
+    <h4>Anar a: <a href="/centre/teachers/">Professors</a></h4>
+    <h1>INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+    <table style="width: 50%; border-collapse: collapse;" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido1</th>
+                <th>Apellido2</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Curs</th>
+                <th>Módulos Matriculados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+            <tr>
+                <td>{{ alumno.nom }}</td>
+                <td>{{ alumno.cognom1 }}</td>
+                <td>{{ alumno.cognom2 }}</td>
+                <td>{{ alumno.correu }}</td>
+                <td>{{ alumno.rol }}</td>
+                <td>{{ alumno.curs }}</td>
+                <td>{{ alumno.Moduls_Matriculats }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
