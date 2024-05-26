@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignatures List</title>
+</head>
+
+<body>
+    <h1>Llista d'Assignatures</h1>
+    <ul>
+        {% for assignatura in assignatures %}
+        <li>{{ assignatura.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'assignatura_create' %}">Crear Nueva Assignatura</a>
+</body>
+
+</html>

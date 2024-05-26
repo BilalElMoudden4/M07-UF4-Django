@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+
+<body>
+    <h4>Anar a: <a href="/centre/teachers/">Professors</a></h4>
+    <h1>INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+    <table style="width: 50%; border-collapse: collapse;" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido1</th>
+                <th>Apellido2</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Curs</th>
+                <th>Módulos Matriculados</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuari in usuaris %}
+            <tr>
+                <td>{{ usuari.nom }}</td>
+                <td>{{ usuari.cognom }}</td>
+                <td></td>
+                <td>{{ usuari.email }}</td>
+                <td>{{ usuari.rol }}</td>
+                <td>{{ usuari.assignatures }}</td>
+                <td>{{ usuari.moduls_matriculats }}</td>
+                <td>
+                    <a href="{% url 'usuari_update' usuari.pk %}">Editar</a>
+                    <a href="{% url 'usuari_delete' usuari.pk %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'usuari_create' %}">Crear Nuevo Alumno</a>
+</body>
+
+</html>
